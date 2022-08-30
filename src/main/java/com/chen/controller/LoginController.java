@@ -1,12 +1,13 @@
 package com.chen.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.chen.beans.User;
 import com.chen.mapper.UserMapper;
 import com.chen.server.UserService;
 import com.chen.util.CheckRequestBodyUtil;
+import com.chen.util.JWTUtils;
 import com.chen.util.MD5Util;
 import com.chen.vo.ResultVO;
-import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,7 +40,7 @@ public class LoginController {
         } else {
             User user = userList.get(0);
             if (user.getPassword().equals(MD5Util.encode(jsonObject.getString("password")))) {
-                return new ResultVO(1, "登陆成功", "123456");
+                return new ResultVO(1, "登陆成功", JWTUtils.getTokenByUser(user));
             } else {
                 return new ResultVO(-1, "密码错误", null);
             }
