@@ -22,4 +22,23 @@ public class ResultVO {
     //响应给前端的数据
     private Object data;
 
+    public static ResultVO ok() {
+        return new ResultVO(1, "请求成功", null);
+    }
+
+    public static ResultVO ok(Object data) {
+        return new ResultVO(1, "请求成功", data);
+    }
+
+    public static ResultVO error() {
+        return new ResultVO(-1, "请求失败", null);
+    }
+
+    public static ResultVO error(String msg) {
+        return new ResultVO(-1, msg, null);
+    }
+
+    public static ResultVO error(Object data) {
+        return new ResultVO(-1, "请求失败", data);
+    }
 }
