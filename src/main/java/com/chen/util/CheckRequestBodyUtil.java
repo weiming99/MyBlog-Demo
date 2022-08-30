@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.chen.vo.ResultVO;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 /**
  * @author Amin
@@ -14,23 +15,18 @@ public class CheckRequestBodyUtil {
 
 
     public static ResultVO checkParams(JSONObject jsonObject, String... params) {
-        if (params != null && params.length > 0) {
-            for (String key : params) {
-                String value = jsonObject.getString(key);
-                if (value == null) {
-                    return ResultVO.error("缺少" + key + "参数");
-                } else if ("".equals(value.trim())) {
-                    return ResultVO.error(key + "参数为空值");
-                }
-            }
-        } else {
-            for (String key : jsonObject.keySet()) {
-                String value = jsonObject.getString(key);
-                if (value == null) {
-                    return ResultVO.error("缺少" + key + "参数");
-                } else if ("".equals(value.trim())) {
-                    return ResultVO.error(key + "参数为空值");
-                }
+
+        if (!(params != null && params.length > 0)) {
+            Set<String> strings = jsonObject.keySet();
+            params = strings.toArray(new String[0]);
+        }
+
+        for (String key : params) {
+            String value = jsonObject.getString(key);
+            if (value == null) {
+                return ResultVO.error("缺少" + key + "参数");
+            } else if ("".equals(value.trim())) {
+                return ResultVO.error(key + "参数为空值");
             }
         }
 
