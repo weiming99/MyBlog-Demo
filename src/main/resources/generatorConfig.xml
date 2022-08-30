@@ -10,12 +10,13 @@ MyBatis3: 生成带条件的CRUD（奢华尊享版）
 -->
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <commentGenerator>
+            <!-- 添加 db 表中字段的注释 -->
+            <property name="addRemarkComments" value="flase"/>
             <!-- 不希望生成的注释中包含时间戳 -->
             <property name="suppressDate" value="true"/>
             <!-- 是否不生成注释 -->
             <property name="suppressAllComments" value="true" />
-            <!-- 添加 db 表中字段的注释 -->
-            <property name="addRemarkComments" value="true"/>
+
         </commentGenerator>
         <!-- 数据库的连接信息 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"

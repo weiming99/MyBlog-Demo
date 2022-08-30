@@ -1,11 +1,11 @@
-package chen.vo;
+package com.chen.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author chen
+ * @author com.chen
  * @crete 2022-08-29-21:00
  */
 @Data

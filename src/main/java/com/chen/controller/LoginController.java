@@ -1,16 +1,14 @@
-package chen.controller;
+package com.chen.controller;
 
-import chen.vo.ResultVO;
+import com.chen.vo.ResultVO;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 /**
- * @author chen
+ * @author com.chen
  * @crete 2022-08-29-20:59
  */
 @RestController
