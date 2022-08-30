@@ -14,11 +14,10 @@ import java.util.Set;
 public class CheckRequestBodyUtil {
 
 
-    public static ResultVO checkParams(JSONObject jsonObject, String... params) {
+    public static ResultVO checkParams(JSONObject jsonObject, String[] params) {
 
-        if (!(params != null && params.length > 0)) {
-            Set<String> strings = jsonObject.keySet();
-            params = strings.toArray(new String[0]);
+        if ( params == null ) {
+            return ResultVO.ok();
         }
 
         for (String key : params) {

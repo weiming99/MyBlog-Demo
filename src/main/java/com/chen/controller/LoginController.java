@@ -29,7 +29,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public ResultVO login(@RequestBody JSONObject jsonObject) {
-        ResultVO resultVO = CheckRequestBodyUtil.checkParams(jsonObject, "account", "password");
+        ResultVO resultVO = CheckRequestBodyUtil.checkParams(jsonObject, new String[]{"account", "password"});
         if (resultVO.getCode() != 1) {
             return resultVO;
         }
