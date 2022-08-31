@@ -1,6 +1,7 @@
 package com.chen.controller;
 
 import com.chen.vo.ResultVO;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @crete 2022-08-30-22:43
  */
 @RestController
+@CrossOrigin
 public class TestJwtController {
 
     @PostMapping("/test1")

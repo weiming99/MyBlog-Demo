@@ -46,6 +46,7 @@ public class CheckTokenInterceptor implements HandlerInterceptor {
     private void doResponse(HttpServletResponse response, ResultVO resultVO) throws IOException {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
+        response.addHeader("Access-Control-Allow-Origin", "*");
         PrintWriter out = response.getWriter();
         String s = new ObjectMapper().writeValueAsString(resultVO);
         out.print(s);
