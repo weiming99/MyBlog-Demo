@@ -97,7 +97,6 @@
             <charset>UTF-8</charset>
         </encoder>
     </appender>
-
     <!--给定记录器的每个启用的日志记录请求都将转发到该记录器中的所有appender以及层次结构中较高的appender（不用在意level值）。
     换句话说，appender是从记录器层次结构中附加地继承的。
     例如，如果将控制台appender添加到根记录器，则所有启用的日志记录请求将至少在控制台上打印。
