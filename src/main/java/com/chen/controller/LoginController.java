@@ -9,7 +9,6 @@ import com.chen.util.JWTUtils;
 import com.chen.util.MD5Util;
 import com.chen.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +20,6 @@ import java.util.List;
  * @crete 2022-08-29-20:59
  */
 @RestController
-@CrossOrigin
 public class LoginController {
 
     @Autowired
