@@ -45,5 +45,7 @@ mybatis:
     jdbc-type-for-null: null
     map-underscore-to-camel-case: true
 #  type-aliases-package: com.com.chen.beans
+logging:
+  config: classpath:logback-spring.xml
 
 
