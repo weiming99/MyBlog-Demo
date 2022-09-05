@@ -1,5 +1,6 @@
 package com.chen.controller;
 
+import cn.hutool.core.util.StrUtil;
 import com.chen.domain.ResponseResult;
 import com.chen.entity.User;
 import com.chen.service.LoginServcie;
@@ -16,6 +17,9 @@ public class LoginController {
 
     @PostMapping("/user/login")
     public ResponseResult login(@RequestBody User user) {
+        if (StrUtil.hasBlank(user.getUserName(),user.getPassword())) {
+            throw new RuntimeException("账号或密码不能为空");
+        }
         return loginServcie.login(user);
     }
 
