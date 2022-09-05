@@ -1,4 +1,4 @@
-package com.chen.util;
+package com.chen.utils;
 
 import java.security.MessageDigest;
 
@@ -40,7 +40,7 @@ public class MD5Util {
     }
 
     public static void main(String[] args) {
-        System.out.println(MD5Util.encode("admin"));
+        System.out.println(MD5Util.encode("123456"));
 
     }
 }

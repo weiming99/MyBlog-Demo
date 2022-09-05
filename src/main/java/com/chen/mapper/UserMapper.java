@@ -1,30 +1,18 @@
 package com.chen.mapper;
 
-import com.chen.beans.User;
-import com.chen.beans.UserExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.chen.entity.User;
 
-public interface UserMapper {
-    int countByExample(UserExample example);
+/**
+ * @author Administrator
+ * @description 针对表【sys_user(用户表)】的数据库操作Mapper
+ * @createDate 2022-09-05 15:44:10
+ * @Entity com.chen.domain.User
+ */
+public interface UserMapper extends BaseMapper<User> {
 
-    int deleteByExample(UserExample example);
-
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(User record);
-
-    int insertSelective(User record);
-
-    List<User> selectByExample(UserExample example);
-
-    User selectByPrimaryKey(Integer id);
-
-    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
-
-    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
 }
+
+
+
+

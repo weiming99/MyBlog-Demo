@@ -47,9 +47,9 @@
             如果上面选用了yyyy-MM,则单位为月,另外上面的单位默认为yyyy-MM-dd-->
             <maxHistory>30</maxHistory>
             <!-- 每个日志文件到10mb的时候开始切分，最多保留30天，但最大到20GB，哪怕没到30天也要删除多余的日志 -->
-            <totalSizeCap>20GB</totalSizeCap>
+            <totalSizeCap>200MB</totalSizeCap>
             <!-- maxFileSize:这是活动文件的大小，默认值是10MB，测试时可改成5KB看效果 -->
-            <maxFileSize>10MB</maxFileSize>
+            <maxFileSize>5MB</maxFileSize>
         </rollingPolicy>
         <!--编码器-->
         <encoder>
@@ -85,9 +85,9 @@
             如果上面选用了yyyy-MM,则单位为月,另外上面的单位默认为yyyy-MM-dd-->
             <maxHistory>30</maxHistory>
             <!-- 每个日志文件到10mb的时候开始切分，最多保留30天，但最大到20GB，哪怕没到30天也要删除多余的日志 -->
-            <totalSizeCap>20GB</totalSizeCap>
+            <totalSizeCap>200MB</totalSizeCap>
             <!-- maxFileSize:这是活动文件的大小，默认值是10MB，测试时可改成5KB看效果 -->
-            <maxFileSize>10MB</maxFileSize>
+            <maxFileSize>5MB</maxFileSize>
         </rollingPolicy>
         <!--编码器-->
         <encoder>
