@@ -45,7 +45,6 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             Claims claims = JwtUtil.parseJWT(token);
             userid = claims.getSubject();
         } catch (Exception e) {
-            e.printStackTrace();
             ResponseResult result = new ResponseResult(HttpStatus.FORBIDDEN.value(), "非法token");
             String json = JSON.toJSONString(result);
             WebUtils.renderString(response, json);

@@ -62,5 +62,5 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
-logging:
-  config: classpath:logback-spring.xml
+#logging:
+#  config: classpath:logback-spring.xml
