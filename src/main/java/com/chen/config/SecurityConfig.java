@@ -64,7 +64,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 对于登录接口 允许匿名访问
                 .antMatchers("/user/login").anonymous()
                 // druid接口 放行
-                .antMatchers("/druid/**").permitAll();
+                .antMatchers("/druid/**").permitAll()
+                // druid接口 放行
+                .antMatchers("/captchaImage").permitAll();
         // 除上面外的所有请求全部需要鉴权认证
 
         for (Menu menu : menuMapper.selectAllByStatus("0")) {

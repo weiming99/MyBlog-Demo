@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class LoginServiceImpl implements LoginServcie {
@@ -38,9 +39,8 @@ public class LoginServiceImpl implements LoginServcie {
         //将密码去除
         loginUser.setPasswordEmpty();
 
-        // todo :变成时效性
         //authenticate存入redis
-        redisCache.setCacheObject("login:" + userId, loginUser);
+        redisCache.setCacheObject("login:" + userId, loginUser, 1, TimeUnit.HOURS);
         //把token响应给前端
         HashMap<String, String> map = new HashMap<>();
         map.put("token", jwt);
