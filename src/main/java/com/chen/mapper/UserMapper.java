@@ -2,6 +2,9 @@ package com.chen.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.chen.entity.User;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author Administrator
@@ -11,6 +14,7 @@ import com.chen.entity.User;
  */
 public interface UserMapper extends BaseMapper<User> {
 
+    List<User> selectAllByStatus(@Param("status") String status);
 }
 
 
